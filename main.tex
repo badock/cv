@@ -1,0 +1,137 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+%% \begin{filecontents*}{xxyyy.bib}
+%% @book{testa,
+%%     author = "The AuthorA",
+%%     title = "The TitleA",
+%%     year = "2012",
+%%     publisher = "The PublisherA"
+%% }
+%% @book{testb,
+%%     author = "The AuthorB",
+%%     title = "The TitleB",
+%%     year = "2012",
+%%     publisher = "The PublisherB"
+%% }
+%% \end{filecontents*}
+
+\documentclass[french,11pt,a4paper,sans]{moderncv}
+
+\usepackage[frenchb]{babel}
+\usepackage[utf8x]{inputenc}  
+\usepackage[T1]{fontenc}
+
+
+\usepackage{apacite}
+\usepackage[scale=0.75]{geometry}
+
+\usepackage{multibib}
+\newcites{article,book}{{Articles},{Books}}
+
+
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{green}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Jonathan}{Pastor}
+\title{Ph.D student at ASCOLA}                               % optional, remove / comment the line if not wanted
+%\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+%\phone[mobile]{}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\phone[fixed]{+33 2 51 85 82 80}
+%\phone[fax]{}
+\email{jonathan.pastor@me.com}                               % optional, remove / comment the line if not wanted
+\homepage{jonathan.pastor.fr}                         % optional, remove / comment the line if not wanted
+\social[github]{badock}                              % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+
+
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+
+
+\section{Ph.D thesis}
+\cvitem{title}{\emph{Conception of a fully distributed IaaS manager based on OpenStack.}}
+\cvitem{supervisors}{Frédéric Desprez and Adrien Lebre}
+\cvitem{defense}{February 2016}
+
+\section{Education}
+\cventry{2012--now}{Ph.D, Computer Science}{ASCOLA - Lina - Inria}{Nantes}{\textit{}}{Conception of a fully distributed IaaS manager based on OpenStack}  % arguments 3 to 6 can be left empty
+\cventry{2009--2012}{Master, Computer Science}{Ecole des Mines de Nantes}{Nantes}{\textit{}}{Engineering degree}
+\cventry{2009--2012}{Bachelor, Computer Science}{Université de Nantes}{Nantes}{\textit{}}{}
+
+
+\section{Research Interests}
+\cvitem{Cloud Computing}{Geographically distributed  OpenStack, Cloud Computing infrastructures.}
+\cvitem{Distributed computing}{Distibuted algorithms, concurrency, fault-tolerance.}
+
+
+
+\section{Computer skills}
+\cvitem{Systems}{OpenStack (Nova), Grid'5000, UNIX}
+\cvitem{Programming languages}{Python, Java, Scala/Akka, R language\newline Web programming}
+
+
+\section{Languages}
+\cvdoubleitem{French}{Native}{English}{Almost fluent}
+\cvdoubleitem{German}{Scholar}{Spanish}{Basics}
+%% \cvdoubleitem{Russian}{Learning basics}{}{}
+
+
+\section{Research activity}
+
+
+\subsection{Publications}
+\renewcommand*{\bibliographyhead}[1]{}
+
+\nocite{*}
+
+\bibliographystyle{ieeetr}
+\bibliography{main}
+
+
+\subsection{Awards}
+\cventry{June 2014}{Grid'5000 large scale challenge}{1st prize}{Grid'5000 Spring
+  School 2014}{Ecole normale supérieure de Lyon}{The experiment I conducted with
+  Laurent  Pouilloux got  the  first prize  at the  large  scale challenge.  The
+  experiment  consisted in  deploying and  scheduling 1700  VMs in  a multi-site
+  infrastructure, thanks to DVMS and the Vivaldi algorithm.}
+
+
+\section{Professional Experience}
+\subsection{Research}
+\cventry{October 2012--now}{Ph.D thesis}{ASCOLA}{Nantes}{}{Conception of a fully distributed IaaS manager based on OpenStack.}
+\subsection{Internships}
+\cventry{February--August2012}{Research internship}{ASCOLA}{Nantes}{}{Development on a Chemical Programming research project.}
+\cventry{May--August 2011}{Javascript/ActionScript development}{Accenture}{Riga (Latvia)}{}{}
+\cventry{July 2010}{Worker on Mainframes assembly-lines}{IBM}{Montpellier}{}{}
+\cventry{July 2009}{Javascript/XUL development}{Carra-consulting}{Nantes}{}{}
+
+
+\end{document}
