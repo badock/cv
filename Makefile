@@ -1,6 +1,6 @@
 all:	main.tex main.bib
 	pdflatex main.tex
-	bibtex main.aux
+	biber main
 	pdflatex main.tex
 	pdflatex main.tex
 
